@@ -11,5 +11,7 @@
         <file>qml/icons/MoreIcon.png</file>
         <file>qml/AboutPage.qml</file>
         <file>qml/RecentPage.qml</file>
+        <file>qml/BuddiesPage.qml</file>
+        <file>qml/BuddyListElement.qml</file>
     </qresource>
 </RCC>

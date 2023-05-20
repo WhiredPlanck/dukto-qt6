@@ -6,6 +6,7 @@
 #include <QTranslator>
 
 #include "model/recentlistitemmodel.h"
+#include "model/buddylistitemmodel.h"
 
 int main(int argc, char *argv[])
 {
@@ -26,7 +27,9 @@ int main(int argc, char *argv[])
 
     QQmlApplicationEngine engine;
 
+    BuddyListItemModel buddyListItemModel;
     RecentListItemModel recentListItemModel;
+    engine.rootContext()->setContextProperty("buddiesListItemModel", &buddyListItemModel);
     engine.rootContext()->setContextProperty("recentListItemModel", &recentListItemModel);
 
     const QUrl url(QStringLiteral("qrc:/qml/main.qml"));

@@ -31,6 +31,16 @@ Rectangle {
         }
     }
 
+    BuddiesPage {
+        id: buddiesPage
+        anchors.top: tabBar.bottom
+        anchors.topMargin: 10
+        anchors.bottom: toolBar.top
+        width: parent.width
+        x: 200
+        opacity: 0
+    }
+
     RecentPage {
         id: recentPage
         anchors.top: tabBar.bottom
@@ -53,13 +63,22 @@ Rectangle {
 
     states: [
         State {
+            name: "buddies"
+
+            PropertyChanges {
+                target: buddiesPage
+                opacity: 1
+                x: 0
+            }
+        },
+        State {
             name: "recent"
 
-//            PropertyChanges {
-//                target: buddiesPage
-//                opacity: 0
-//                x: -360
-//            }
+            PropertyChanges {
+                target: buddiesPage
+                opacity: 0
+                x: -360
+            }
             PropertyChanges {
                 target: recentPage
                 opacity: 1
@@ -69,11 +88,11 @@ Rectangle {
         State {
             name: "about"
 
-//            PropertyChanges {
-//                target: buddiesPage
-//                opacity: 0
-//                x: -360
-//            }
+            PropertyChanges {
+                target: buddiesPage
+                opacity: 0
+                x: -360
+            }
             PropertyChanges {
                 target: recentPage
                 opacity: 0
