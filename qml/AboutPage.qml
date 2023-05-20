@@ -1,4 +1,5 @@
 import QtQuick 2.15
+import QtGraphicalEffects 1.15
 
 Item {
 
@@ -8,10 +9,18 @@ Item {
         width: 64
         height: 64
         color: "#248b00"
-        // Image {
-        //     source: "TileGradient.png"
-        //     anchors.fill: parent
-        // }
+
+        LinearGradient {
+            anchors.fill: parent;
+            start: Qt.point(0, height)
+            end: Qt.point(width, 0)
+            opacity: 0.3
+            gradient: Gradient {
+                GradientStop { position: 0.0; color: "#248b00" }
+                GradientStop { position: 0.618; color: "white" }
+                GradientStop { position: 1.0; color: "#248b00"}
+            }
+        }
         // Image {
         //     source: "DuktoMetroIcon.png"
         //     anchors.fill: parent
