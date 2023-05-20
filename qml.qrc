@@ -2,5 +2,6 @@
     <qresource prefix="/">
         <file>qml/main.qml</file>
         <file>qml/SmoothText.qml</file>
+        <file>qml/TabBar.qml</file>
     </qresource>
 </RCC>
