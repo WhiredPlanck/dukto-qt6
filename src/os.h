@@ -17,7 +17,16 @@ inline QString hostName() {
 }
 
 inline QString osName() {
-    return QSysInfo::prettyProductName();
+    return
+#if defined(Q_OS_WIN)
+        "Windows";
+#elif defined(Q_OS_MACOS)
+        "macOS";
+#elif defined(Q_OS_LINUX)
+        "Linux";
+#else
+        "Unknown";
+#endif
 }
 
 }

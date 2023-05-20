@@ -32,7 +32,7 @@ void BuddyListItemModel::addMeElement()
              dukto::os::userName() + tr(" (You)"),
              dukto::os::hostName(),
              dukto::os::osName(),
-             QUrl::fromLocalFile(""));
+             QUrl::fromLocalFile("")); // TODO: get avatar here
 }
 
 void BuddyListItemModel::addIPElement()
@@ -72,25 +72,25 @@ void BuddyListItemModel::addBuddy(QString ip, qint16 port, QString username, QSt
 
     // Update generic avatar
     if ((platform.toLower() == "android") || (platform.toLower() == "ios"))
-        it->setData("SmartphoneLogo.png", dukto::toUType(BuddyRoles::GenericAvatar));
+        it->setData("icons/SmartPhoneLogo.png", dukto::toUType(BuddyRoles::GenericAvatar));
     else if (platform.toLower() == "ip")
-        it->setData("IpLogo.png", dukto::toUType(BuddyRoles::GenericAvatar));
+        it->setData("icons/IPLogo.png", dukto::toUType(BuddyRoles::GenericAvatar));
     else
-        it->setData("PcLogo.png", dukto::toUType(BuddyRoles::GenericAvatar));
+        it->setData("icons/PCLogo.png", dukto::toUType(BuddyRoles::GenericAvatar));
 
     // Update logo
     if (platform.toLower() == "windows")
-        it->setData("WindowsLogo.png", dukto::toUType(BuddyRoles::OSLogo));
-    else if (platform.toLower() == "macintosh")
-        it->setData("AppleLogo.png", dukto::toUType(BuddyRoles::OSLogo));
+        it->setData("icons/WindowsLogo.png", dukto::toUType(BuddyRoles::OSLogo));
+    else if (platform.toLower() == "macos")
+        it->setData("icons/AppleLogo.png", dukto::toUType(BuddyRoles::OSLogo));
     else if (platform.toLower() == "linux")
-        it->setData("LinuxLogo.png", dukto::toUType(BuddyRoles::OSLogo));
+        it->setData("icons/LinuxLogo.png", dukto::toUType(BuddyRoles::OSLogo));
     else if (platform.toLower() == "ios")
-        it->setData("IosLogo.png", dukto::toUType(BuddyRoles::OSLogo));
+        it->setData("icons/iOSLogo.png", dukto::toUType(BuddyRoles::OSLogo));
     else if (platform.toLower() == "android")
-        it->setData("AndroidLogo.png", dukto::toUType(BuddyRoles::OSLogo));
+        it->setData("icons/AndroidLogo.png", dukto::toUType(BuddyRoles::OSLogo));
     else
-        it->setData("UnknownLogo.png", dukto::toUType(BuddyRoles::OSLogo));
+        it->setData("icons/UnknownLogo.png", dukto::toUType(BuddyRoles::OSLogo));
 
     // Add elemento to the list
     if (add) {

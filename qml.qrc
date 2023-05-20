@@ -13,5 +13,16 @@
         <file>qml/RecentPage.qml</file>
         <file>qml/BuddiesPage.qml</file>
         <file>qml/BuddyListElement.qml</file>
+        <file>qml/icons/AndroidLogo.png</file>
+        <file>qml/icons/AppleLogo.png</file>
+        <file>qml/icons/iOSLogo.png</file>
+        <file>qml/icons/IPLogo.png</file>
+        <file>qml/icons/LinuxLogo.png</file>
+        <file>qml/icons/PCLogo.png</file>
+        <file>qml/icons/RecentFile.png</file>
+        <file>qml/icons/RecentFiles.png</file>
+        <file>qml/icons/UnknownLogo.png</file>
+        <file>qml/icons/WindowsLogo.png</file>
+        <file>qml/icons/SmartPhoneLogo.png</file>
     </qresource>
 </RCC>

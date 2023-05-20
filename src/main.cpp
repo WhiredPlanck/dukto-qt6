@@ -29,6 +29,10 @@ int main(int argc, char *argv[])
 
     BuddyListItemModel buddyListItemModel;
     RecentListItemModel recentListItemModel;
+
+    buddyListItemModel.addMeElement();
+    buddyListItemModel.addIPElement();
+
     engine.rootContext()->setContextProperty("buddiesListItemModel", &buddyListItemModel);
     engine.rootContext()->setContextProperty("recentListItemModel", &recentListItemModel);
 
