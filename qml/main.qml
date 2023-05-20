@@ -6,4 +6,9 @@ Window {
     height: 500
     visible: true
     title: qsTr("Dukto")
+
+    DuktoFragment {
+        id: duktoFragment
+        anchors.fill: parent
+    }
 }
