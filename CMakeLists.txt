@@ -16,6 +16,7 @@ set(TS_FILES i18n/dukto-qt6_en_US.ts)
 
 set(PROJECT_SOURCES
         src/main.cpp
+        src/model/recentlistitemmodel.cpp
         qml.qrc
         ${TS_FILES}
 )
@@ -46,6 +47,8 @@ else()
 
     qt5_create_translation(QM_FILES ${CMAKE_SOURCE_DIR} ${TS_FILES})
 endif()
+
+target_include_directories(dukto-qt6 PRIVATE src)
 
 target_link_libraries(dukto-qt6
   PRIVATE Qt${QT_VERSION_MAJOR}::Core Qt${QT_VERSION_MAJOR}::Quick)

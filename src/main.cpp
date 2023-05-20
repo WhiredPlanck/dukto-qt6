@@ -1,8 +1,11 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include <QQmlContext>
 
 #include <QLocale>
 #include <QTranslator>
+
+#include "model/recentlistitemmodel.h"
 
 int main(int argc, char *argv[])
 {
@@ -22,6 +25,10 @@ int main(int argc, char *argv[])
     }
 
     QQmlApplicationEngine engine;
+
+    RecentListItemModel recentListItemModel;
+    engine.rootContext()->setContextProperty("recentListItemModel", &recentListItemModel);
+
     const QUrl url(QStringLiteral("qrc:/qml/main.qml"));
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
         &app, [url](QObject *obj, const QUrl &objUrl) {
