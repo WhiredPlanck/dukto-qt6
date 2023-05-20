@@ -30,4 +30,51 @@ Rectangle {
             if (intent == "settings") showSettings()
         }
     }
+
+    AboutPage {
+        id: aboutPage
+        anchors.top: tabBar.bottom
+        anchors.topMargin: 10
+        anchors.bottom: toolBar.top
+        width: parent.width
+        x: parent.width
+        opacity: 0
+    }
+
+    states: [
+        State {
+            name: "about"
+
+//            PropertyChanges {
+//                target: buddiesPage
+//                opacity: 0
+//                x: -360
+//            }
+//            PropertyChanges {
+//                target: recentPage
+//                opacity: 0
+//                x: -360
+//            }
+            PropertyChanges {
+                target: aboutPage
+                opacity: 1
+                x: 0
+            }
+        }
+    ]
+
+    transitions: [
+        Transition {
+            NumberAnimation {
+                properties: "x,y"
+                easing.type: Easing.OutQuart
+                duration: 1000
+            }
+            NumberAnimation {
+                properties: "opacity"
+                easing.type: Easing.InQuad
+                duration: 500
+            }
+        }
+    ]
 }

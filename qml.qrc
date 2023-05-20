@@ -9,5 +9,6 @@
         <file>qml/icons/ShowIPIcon.png</file>
         <file>qml/icons/SettingsIcon.png</file>
         <file>qml/icons/MoreIcon.png</file>
+        <file>qml/AboutPage.qml</file>
     </qresource>
 </RCC>
