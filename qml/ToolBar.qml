@@ -60,7 +60,9 @@ Item {
 
             MouseArea {
                 anchors.fill: parent
-                // onClicked: guiBehind.openDestinationFolder();
+                onClicked: {
+                    engineRunner.openRecevieDirectory()
+                }
             }
         }
         Text {

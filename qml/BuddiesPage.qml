@@ -4,12 +4,12 @@ Item {
     clip: true
 
     ListView {
-        id: buddiesList
+        id: buddyList
         anchors.fill: parent
         spacing: 10
         anchors.leftMargin: 25
         anchors.rightMargin: 0
-        model: buddiesListItemModel
+        model: buddyListItemModel
 
         delegate: Component {
              BuddyListElement {

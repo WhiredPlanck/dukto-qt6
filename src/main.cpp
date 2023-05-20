@@ -5,8 +5,7 @@
 #include <QLocale>
 #include <QTranslator>
 
-#include "model/recentlistitemmodel.h"
-#include "model/buddylistitemmodel.h"
+#include "enginerunner.h"
 
 int main(int argc, char *argv[])
 {
@@ -26,23 +25,7 @@ int main(int argc, char *argv[])
     }
 
     QQmlApplicationEngine engine;
-
-    BuddyListItemModel buddyListItemModel;
-    RecentListItemModel recentListItemModel;
-
-    buddyListItemModel.addMeElement();
-    buddyListItemModel.addIPElement();
-
-    engine.rootContext()->setContextProperty("buddiesListItemModel", &buddyListItemModel);
-    engine.rootContext()->setContextProperty("recentListItemModel", &recentListItemModel);
-
-    const QUrl url(QStringLiteral("qrc:/qml/main.qml"));
-    QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
-        &app, [url](QObject *obj, const QUrl &objUrl) {
-            if (!obj && url == objUrl)
-                QCoreApplication::exit(-1);
-        }, Qt::QueuedConnection);
-    engine.load(url);
+    EngineRunner runner(&app, &engine);
 
     return app.exec();
 }
