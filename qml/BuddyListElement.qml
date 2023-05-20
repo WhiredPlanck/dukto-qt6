@@ -1,4 +1,5 @@
 import QtQuick 2.15
+import QtGraphicalEffects 1.15
 
 Flipable {
    id: contactDelegateItem
@@ -46,10 +47,19 @@ Flipable {
            front: Rectangle {
                anchors.fill: parent
                color: "#4cb328" // theme.color2
-               Image {
-                   anchors.fill: parent
-                   source: "TileGradient.png"
+
+               LinearGradient {
+                   anchors.fill: parent;
+                   start: Qt.point(0, height)
+                   end: Qt.point(width, 0)
+                   opacity: 0.3
+                   gradient: Gradient {
+                       GradientStop { position: 0.0; color: "#4cb328" }
+                       GradientStop { position: 0.618; color: "white" }
+                       GradientStop { position: 1.0; color: "#4cb328"}
+                   }
                }
+
                Image {
                    id: buddyGenericImage
                    anchors.fill: parent
@@ -64,10 +74,19 @@ Flipable {
            back: Rectangle {
                anchors.fill: parent
                color:  "#4cb328" // theme.color2
-               Image {
-                   anchors.fill: parent
-                   source: "TileGradient.png"
+
+               LinearGradient {
+                   anchors.fill: parent;
+                   start: Qt.point(0, height)
+                   end: Qt.point(width, 0)
+                   opacity: 0.3
+                   gradient: Gradient {
+                       GradientStop { position: 0.0; color: "#4cb328" }
+                       GradientStop { position: 0.618; color: "white" }
+                       GradientStop { position: 1.0; color: "#4cb328"}
+                   }
                }
+
                Image {
                    id: buddyOSLogoImage
                    anchors.fill: parent
@@ -139,7 +158,6 @@ Flipable {
        PropertyAction { target: contactDelegateItem; property: "ListView.delayRemove"; value: true }
        NumberAnimation { target: rotation; property: "angle"; from: 0; to: -90; duration: 300; easing.type: Easing.InCubic }
        PropertyAction { target: contactDelegateItem; property: "ListView.delayRemove"; value: false }
-
    }
 
    Rectangle {
