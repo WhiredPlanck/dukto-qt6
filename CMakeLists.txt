@@ -9,10 +9,21 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+#######################################################################
+# CMake macros
+#######################################################################
+include(GNUInstallDirs)
+
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Core Quick LinguistTools)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core Quick LinguistTools)
 
 set(TS_FILES i18n/dukto-qt6_zh_CN.ts)
+
+set(APP_ICON_RESOURCE_WINDOWS "${CMAKE_CURRENT_SOURCE_DIR}/data/dukto.rc")
+
+set(APP_ICON_MACOSX ${CMAKE_CURRENT_SOURCE_DIR}/data/dukto.icns)
+     set_source_files_properties(${APP_ICON_MACOSX} PROPERTIES
+            MACOSX_PACKAGE_LOCATION "Resources")
 
 set(PROJECT_SOURCES
         src/main.cpp
@@ -22,6 +33,8 @@ set(PROJECT_SOURCES
         src/model/ipaddressitemmodel.cpp
         qml.qrc
         ${TS_FILES}
+        ${APP_ICON_RESOURCE_WINDOWS}
+        ${APP_ICON_MACOSX}
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
@@ -57,9 +70,10 @@ target_link_libraries(dukto-qt6
   PRIVATE Qt${QT_VERSION_MAJOR}::Core Qt${QT_VERSION_MAJOR}::Quick)
 
 set_target_properties(dukto-qt6 PROPERTIES
-    MACOSX_BUNDLE_GUI_IDENTIFIER my.example.com
+    MACOSX_BUNDLE_GUI_IDENTIFIER msec.it
     MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
     MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
+    MACOSX_BUNDLE_ICON_FILE data/dukto.icns
     MACOSX_BUNDLE TRUE
     WIN32_EXECUTABLE TRUE
 )
@@ -67,6 +81,10 @@ set_target_properties(dukto-qt6 PROPERTIES
 install(TARGETS dukto-qt6
     BUNDLE DESTINATION .
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})
+
+if(UNIX AND NOT APPLE)
+    add_subdirectory(data)
+endif()
 
 if(QT_VERSION_MAJOR EQUAL 6)
     qt_import_qml_plugins(dukto-qt6)
