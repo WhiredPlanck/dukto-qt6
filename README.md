@@ -3,7 +3,9 @@
 (WIP) A simple, fast and multi-platform file transfer tool for LAN users, reimplemented with Qt 6.
 
 > Original Author: Emanuele Colombo
+>
 > Original Website: https://www.msec.it/blog/dukto
+>
 > Original Source Code: https://sourceforge.net/projects/dukto/
 
 <p><img src="data/dukto.png" alt="logo"/></p>
