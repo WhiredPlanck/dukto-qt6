@@ -64,10 +64,16 @@ else()
     qt5_create_translation(QM_FILES ${CMAKE_SOURCE_DIR} ${TS_FILES})
 endif()
 
+set(QAPPLICATION_CLASS QGuiApplication)
+add_subdirectory(third-party/singleapplication)
+
 target_include_directories(dukto-qt6 PRIVATE src)
 
-target_link_libraries(dukto-qt6
-  PRIVATE Qt${QT_VERSION_MAJOR}::Core Qt${QT_VERSION_MAJOR}::Quick)
+target_link_libraries(dukto-qt6 PRIVATE
+    Qt${QT_VERSION_MAJOR}::Core
+    Qt${QT_VERSION_MAJOR}::Quick
+    SingleApplication::SingleApplication
+)
 
 set_target_properties(dukto-qt6 PROPERTIES
     MACOSX_BUNDLE_GUI_IDENTIFIER msec.it
