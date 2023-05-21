@@ -12,7 +12,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Core Quick LinguistTools)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core Quick LinguistTools)
 
-set(TS_FILES i18n/dukto-qt6_en_US.ts)
+set(TS_FILES i18n/dukto-qt6_zh_CN.ts)
 
 set(PROJECT_SOURCES
         src/main.cpp
