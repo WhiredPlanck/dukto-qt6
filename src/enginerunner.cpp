@@ -7,13 +7,14 @@
 EngineRunner::EngineRunner(QGuiApplication *app, QQmlApplicationEngine *engine) :
     QObject(nullptr), engine_(engine)
 {
-    buddyListItemModel.addMeElement();
-    buddyListItemModel.addIPElement();
+    buddyListItemModel_.addMeElement();
+    buddyListItemModel_.addIPElement();
 
     // register C++ class for QML
     engine->rootContext()->setContextProperty("engineRunner", this);
-    engine->rootContext()->setContextProperty("buddyListItemModel", &buddyListItemModel);
-    engine->rootContext()->setContextProperty("recentListItemModel", &recentListItemModel);
+    engine->rootContext()->setContextProperty("buddyListItemModel", &buddyListItemModel_);
+    engine->rootContext()->setContextProperty("recentListItemModel", &recentListItemModel_);
+    engine->rootContext()->setContextProperty("ipAddressItemModel", &ipAddressItemModel_);
 
     // load GUI
     const QUrl url(QStringLiteral("qrc:/qml/main.qml"));
@@ -27,4 +28,16 @@ EngineRunner::EngineRunner(QGuiApplication *app, QQmlApplicationEngine *engine) 
 
 void EngineRunner::openRecevieDirectory() {
     QDesktopServices::openUrl(QUrl::fromLocalFile(QDir::currentPath()));
+}
+
+QString EngineRunner::overlayState() {
+    return overlayState_;
+}
+
+void EngineRunner::setOverlayState(QString state) {
+    if (state == overlayState_) {
+        return;
+    }
+    overlayState_ = state;
+    emit overlayStateChanged();
 }

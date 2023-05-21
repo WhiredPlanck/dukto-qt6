@@ -24,5 +24,8 @@
         <file>qml/icons/UnknownLogo.png</file>
         <file>qml/icons/WindowsLogo.png</file>
         <file>qml/icons/SmartPhoneLogo.png</file>
+        <file>qml/IPPage.qml</file>
+        <file>qml/DuktoOverlay.qml</file>
+        <file>qml/icons/BackIcon.png</file>
     </qresource>
 </RCC>

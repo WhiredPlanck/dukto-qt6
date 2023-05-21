@@ -17,8 +17,9 @@ set(TS_FILES i18n/dukto-qt6_en_US.ts)
 set(PROJECT_SOURCES
         src/main.cpp
         src/enginerunner.cpp
-        src/model/recentlistitemmodel.cpp
         src/model/buddylistitemmodel.cpp
+        src/model/recentlistitemmodel.cpp
+        src/model/ipaddressitemmodel.cpp
         qml.qrc
         ${TS_FILES}
 )
