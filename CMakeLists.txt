@@ -27,6 +27,7 @@ set(APP_ICON_MACOSX ${CMAKE_CURRENT_SOURCE_DIR}/data/dukto.icns)
 
 set(PROJECT_SOURCES
         src/main.cpp
+        src/appsettings.cpp
         src/enginerunner.cpp
         src/model/buddylistitemmodel.cpp
         src/model/recentlistitemmodel.cpp

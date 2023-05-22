@@ -27,5 +27,7 @@
         <file>qml/IPPage.qml</file>
         <file>qml/DuktoOverlay.qml</file>
         <file>qml/icons/BackIcon.png</file>
+        <file>qml/ButtonDark.qml</file>
+        <file>qml/TermsPage.qml</file>
     </qresource>
 </RCC>

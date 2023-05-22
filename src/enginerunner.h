@@ -8,6 +8,8 @@
 #include "model/buddylistitemmodel.h"
 #include "model/ipaddressitemmodel.h"
 
+#include "appsettings.h"
+
 class EngineRunner : public QObject
 {
     Q_OBJECT
@@ -32,6 +34,8 @@ private:
     BuddyListItemModel buddyListItemModel_;
     RecentListItemModel recentListItemModel_;
     IPAddressItemModel ipAddressItemModel_;
+
+    AppSettings appSettings_;
 
     QString overlayState_;
 };

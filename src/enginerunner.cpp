@@ -16,6 +16,8 @@ EngineRunner::EngineRunner(QGuiApplication *app, QQmlApplicationEngine *engine) 
     engine->rootContext()->setContextProperty("recentListItemModel", &recentListItemModel_);
     engine->rootContext()->setContextProperty("ipAddressItemModel", &ipAddressItemModel_);
 
+    engine->rootContext()->setContextProperty("appSettings", &appSettings_);
+
     // load GUI
     const QUrl url(QStringLiteral("qrc:/qml/main.qml"));
     QObject::connect(engine, &QQmlApplicationEngine::objectCreated,
