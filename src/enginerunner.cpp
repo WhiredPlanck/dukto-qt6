@@ -17,6 +17,10 @@ EngineRunner::EngineRunner(QGuiApplication *app, QQmlApplicationEngine *engine) 
     engine->rootContext()->setContextProperty("ipAddressItemModel", &ipAddressItemModel_);
 
     engine->rootContext()->setContextProperty("appSettings", &appSettings_);
+    engine->rootContext()->setContextProperty("themeManager", &themeManager_);
+
+    // register singleton(s)
+    engine->rootContext()->setContextProperty("ColorSingleton", &colorSingleton_);
 
     // load GUI
     const QUrl url(QStringLiteral("qrc:/qml/main.qml"));

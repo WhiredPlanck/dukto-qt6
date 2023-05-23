@@ -2,7 +2,7 @@ import QtQuick 2.15
 
 Rectangle {
     state: "buddies"
-    color: "#ffffff"
+    color: ColorSingleton.white
 
     signal showIPList()
     signal showSettings()

@@ -15,6 +15,9 @@ public:
     bool showTermsOnStart();
     void setShowTermsOnStart(bool flag);
 
+    QString themeColorPrimary();
+    void setThemeColorPrimary(QString colorPrimary);
+
 signals:
     void showTermsOnStartChanged();
 

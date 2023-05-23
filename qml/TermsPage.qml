@@ -20,7 +20,7 @@ import QtQuick 2.3
 
 Rectangle {
     id: termsPage
-    color: "#ffffff" // theme.color6
+    color: ColorSingleton.white
 
     signal accepted()
 
@@ -36,7 +36,7 @@ Rectangle {
         anchors.topMargin: 5
         font.pixelSize: 64
         text: qsTr("Disclaimer")
-        color: "#4cb328" // theme.color3
+        color: ColorSingleto.colorAccent
     }
 
     Text {
@@ -49,7 +49,7 @@ Rectangle {
         anchors.topMargin: 45
         font.pixelSize: 16
         text: qsTr("Please read and press 'accept'")
-        color: "#888888" // theme.color5
+        color: ColorSingleton.gray
     }
 
 

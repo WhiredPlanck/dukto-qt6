@@ -13,7 +13,7 @@ Item {
         anchors.top: parent.top
         font.pixelSize: 160
         text: ":-("
-        color: "#555555"
+        color: ColorSingleton.darkGray
         visible: (recentList.count == 0)
     }
 
@@ -23,7 +23,7 @@ Item {
         anchors.left: parent.left
         anchors.leftMargin: 40
         font.pixelSize: 17
-        color: "#555555"
+        color: ColorSingleton.darkGray
         text: qsTr("Sorry, no data has been\nreceived yet...")
         visible: (recentList.count == 0)
     }
@@ -64,7 +64,7 @@ Item {
                          anchors.top: parent.top
                          anchors.bottom: parent.bottom
                          width: 5
-                         color: "#4cb328"
+                         color: themeManager.colorAccent
                      }
                  }
 
@@ -73,7 +73,7 @@ Item {
                      anchors.verticalCenter: parent.verticalCenter
                      width: 32
                      height: 32
-                     color: "#248b00"
+                     color: themeManager.colorPrimary
                      Image {
                          source: model.typeIcon
                          width: 32
@@ -89,7 +89,7 @@ Item {
                      anchors.right: parent.right
                      anchors.rightMargin: 20
                      font.pixelSize: 14
-                     color: "#555555"
+                     color: ColorSingleton.darkGray
                      elide: Text.ElideRight
                      text: model.name
                  }
@@ -102,7 +102,7 @@ Item {
                      anchors.bottomMargin: -1
                      font.pixelSize: 12
                      elide: Text.ElideRight
-                     color: "#888888"
+                     color: ColorSingleton.gray
                      text: qsTr("from %1, %2", model.sender, model.dateTime)
                  }
              }

@@ -9,6 +9,8 @@
 #include "model/ipaddressitemmodel.h"
 
 #include "data/appsettings.h"
+#include "data/thememanager.h"
+#include "data/colorsingleton.h"
 
 class EngineRunner : public QObject
 {
@@ -36,6 +38,9 @@ private:
     IPAddressItemModel ipAddressItemModel_;
 
     AppSettings appSettings_;
+    ThemeManager themeManager_;
+
+    ColorSingleton colorSingleton_;
 
     QString overlayState_;
 };

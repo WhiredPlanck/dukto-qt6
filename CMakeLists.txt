@@ -21,8 +21,10 @@ set(TS_FILES i18n/dukto-qt6_zh_CN.ts)
 
 set(PROJECT_SOURCES
         src/main.cpp
-        src/data/appsettings.cpp
         src/enginerunner.cpp
+        src/data/appsettings.cpp
+        src/data/thememanager.cpp
+        src/data/colorsingleton.cpp
         src/model/buddylistitemmodel.cpp
         src/model/recentlistitemmodel.cpp
         src/model/ipaddressitemmodel.cpp

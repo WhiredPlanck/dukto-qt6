@@ -15,3 +15,12 @@ void AppSettings::setShowTermsOnStart(bool flag) {
     settings_.sync();
     emit showTermsOnStartChanged();
 }
+
+QString AppSettings::themeColorPrimary() {
+    return settings_.value("themeColorPrimary").toString();
+}
+
+void AppSettings::setThemeColorPrimary(QString colorPrimary) {
+    settings_.setValue("themeColorPrimary", colorPrimary);
+    settings_.sync();
+}

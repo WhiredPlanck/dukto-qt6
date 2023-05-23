@@ -7,7 +7,7 @@ Rectangle {
     Rectangle {
         id: disabler
         anchors.fill: parent
-        color: "#ccffffff" // theme.color9
+        color: ColorSingleton.semiTransWhite
         opacity: 0
         visible: false
 
@@ -22,7 +22,7 @@ Rectangle {
         anchors.topMargin: 10
         anchors.bottom: parent.bottom
         width: parent.width
-        x: -50
+        x: -parent.width
         opacity: 0
         onBackHome: parent.state = "none"
     }

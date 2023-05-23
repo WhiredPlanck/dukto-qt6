@@ -31,7 +31,7 @@ Flipable {
            anchors.top: parent.top
            height: 64
            width: 5
-           color: "#4cb328"
+           color: themeManager.colorAccent
        }
    }
 
@@ -46,7 +46,7 @@ Flipable {
 
            front: Rectangle {
                anchors.fill: parent
-               color: "#4cb328" // theme.color2
+               color: themeManager.colorPrimary
 
                LinearGradient {
                    anchors.fill: parent;
@@ -54,9 +54,9 @@ Flipable {
                    end: Qt.point(width, 0)
                    opacity: 0.3
                    gradient: Gradient {
-                       GradientStop { position: 0.0; color: "#4cb328" }
+                       GradientStop { position: 0.0; color: themeManager.colorPrimary }
                        GradientStop { position: 0.618; color: "white" }
-                       GradientStop { position: 1.0; color: "#4cb328"}
+                       GradientStop { position: 1.0; color: themeManager.colorPrimary }
                    }
                }
 
@@ -73,7 +73,7 @@ Flipable {
 
            back: Rectangle {
                anchors.fill: parent
-               color:  "#4cb328" // theme.color2
+               color: themeManager.colorPrimary
 
                LinearGradient {
                    anchors.fill: parent;
@@ -81,9 +81,9 @@ Flipable {
                    end: Qt.point(width, 0)
                    opacity: 0.3
                    gradient: Gradient {
-                       GradientStop { position: 0.0; color: "#4cb328" }
+                       GradientStop { position: 0.0; color: themeManager.colorPrimary }
                        GradientStop { position: 0.618; color: "white" }
-                       GradientStop { position: 1.0; color: "#4cb328"}
+                       GradientStop { position: 1.0; color: themeManager.colorPrimary }
                    }
                }
 
@@ -129,7 +129,7 @@ Flipable {
            anchors.rightMargin: 20
            font.pixelSize: 16
            elide: Text.ElideRight
-           color: "#555555" // theme.color4
+           color: ColorSingleton.darkGray
        }
        Text {
            id: buddySystemText
@@ -141,7 +141,7 @@ Flipable {
            anchors.rightMargin: 20
            font.pixelSize: 14
            elide: Text.ElideRight
-           color: "#555555" // theme.color4
+           color: ColorSingleton.darkGray
        }
    }
 
@@ -161,7 +161,7 @@ Flipable {
    }
 
    Rectangle {
-       color: "#248b00" // theme.color2
+       color: themeManager.colorPrimary
        x: 40
        width: parent.width - 80
        height: 1

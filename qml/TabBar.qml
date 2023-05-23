@@ -18,7 +18,8 @@ Item {
             font.pixelSize: 84
             text: qsTr("buddies")
             transformOrigin: Item.TopLeft
-            color: buddyTextMouseArea.containsMouse ? "#4cb328" : "#cccccc"
+            color: buddyTextMouseArea.containsMouse ? themeManager.colorAccent
+                                                    : ColorSingleton.lightGray
             scale: 0.5
 
             MouseArea {
@@ -38,7 +39,8 @@ Item {
             font.pixelSize: 84
             text: qsTr("recent")
             transformOrigin: Item.TopLeft
-            color: recentTextMouseArea.containsMouse ? "#4cb328" : "#cccccc"
+            color: recentTextMouseArea.containsMouse ? themeManager.colorAccent
+                                                     : ColorSingleton.lightGray
             scale: 0.5
 
             MouseArea {
@@ -56,7 +58,8 @@ Item {
             id: aboutText
             x: 320
             font.pixelSize: 84
-            color: aboutTextMouseArea.containsMouse ? "#4cb328" : "#cccccc"
+            color: aboutTextMouseArea.containsMouse ? themeManager.colorAccent
+                                                    : ColorSingleton.lightGray
             text: qsTr("about")
 
             MouseArea {
@@ -77,7 +80,7 @@ Item {
 
             PropertyChanges {
                 target: buddyText
-                color: "#000000"
+                color: themeManager.colorPrimary
             }
         },
         State {
@@ -91,7 +94,7 @@ Item {
             PropertyChanges {
                 target: recentText
                 x: 117
-                color: "#000000"
+                color: themeManager.colorPrimary
             }
 
             PropertyChanges {
@@ -115,7 +118,7 @@ Item {
             PropertyChanges {
                 target: aboutText
                 x: 190
-                color: "#000000"
+                color: themeManager.colorPrimary
             }
         }
     ]

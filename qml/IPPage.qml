@@ -18,7 +18,7 @@ Rectangle {
 
         Rectangle {
             id: backRecangle
-            color: "#248b00" // theme.color2
+            color: themeManager.colorPrimary
             anchors.left: parent.left
             anchors.top: parent.top
             anchors.bottom: parent.bottom
