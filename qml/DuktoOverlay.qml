@@ -22,7 +22,7 @@ Rectangle {
         anchors.topMargin: 10
         anchors.bottom: parent.bottom
         width: parent.width
-        x: -parent.width
+        x: -50
         opacity: 0
         onBackHome: parent.state = "none"
     }
@@ -32,7 +32,7 @@ Rectangle {
         anchors.top: parent.top
         anchors.bottom: parent.bottom
         width: parent.width
-        x: -50
+        x: -parent.width
         opacity: 0
         onAccepted: {
             appSettings.showTermsOnStart = false;
@@ -53,10 +53,6 @@ Rectangle {
                 opacity: 1
                 visible: true
             }
-            PropertyChanges {
-                target: termsPage
-                x: -parent.width
-            }
         },
         State {
             name: "termspage"
@@ -70,7 +66,7 @@ Rectangle {
 
     transitions: [
         Transition {
-            NumberAnimation { properties: "x,y"; easing.type: Easing.OutCubic; duration: 500 }
+            NumberAnimation { properties: "x,y"; easing.type: Easing.OutCubic; duration: 880 }
             NumberAnimation { properties: "opacity"; easing.type: Easing.OutCubic; duration: 500 }
         }
     ]

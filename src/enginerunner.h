@@ -8,7 +8,7 @@
 #include "model/buddylistitemmodel.h"
 #include "model/ipaddressitemmodel.h"
 
-#include "appsettings.h"
+#include "data/appsettings.h"
 
 class EngineRunner : public QObject
 {

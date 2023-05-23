@@ -19,24 +19,28 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core Quick LinguistTools)
 
 set(TS_FILES i18n/dukto-qt6_zh_CN.ts)
 
-set(APP_ICON_RESOURCE_WINDOWS "${CMAKE_CURRENT_SOURCE_DIR}/data/dukto.rc")
-
-set(APP_ICON_MACOSX ${CMAKE_CURRENT_SOURCE_DIR}/data/dukto.icns)
-     set_source_files_properties(${APP_ICON_MACOSX} PROPERTIES
-            MACOSX_PACKAGE_LOCATION "Resources")
-
 set(PROJECT_SOURCES
         src/main.cpp
-        src/appsettings.cpp
+        src/data/appsettings.cpp
         src/enginerunner.cpp
         src/model/buddylistitemmodel.cpp
         src/model/recentlistitemmodel.cpp
         src/model/ipaddressitemmodel.cpp
         qml.qrc
         ${TS_FILES}
-        ${APP_ICON_RESOURCE_WINDOWS}
-        ${APP_ICON_MACOSX}
 )
+
+if (WIN32)
+    set(APP_ICON_RESOURCE_WINDOWS "${CMAKE_CURRENT_SOURCE_DIR}/data/dukto.rc")
+    set(PROJECT_SOURCE ${PROJECT_SOURCE} ${APP_ICON_RESOURCE_WINDOWS})
+endif()
+
+if (APPLE)
+    set(APP_ICON_MACOSX ${CMAKE_CURRENT_SOURCE_DIR}/data/dukto.icns)
+         set_source_files_properties(${APP_ICON_MACOSX} PROPERTIES
+                MACOSX_PACKAGE_LOCATION "Resources")
+    set(PROJECT_SOURCE ${PROJECT_SOURCE} ${APP_ICON_MACOSX})
+endif()
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(dukto-qt6

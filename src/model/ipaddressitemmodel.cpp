@@ -2,7 +2,7 @@
 #include <QNetworkInterface>
 
 #include "ipaddressitemmodel.h"
-#include "utilities.h"
+#include "utils/utilities.h"
 
 IPAddressItemModel::IPAddressItemModel() :
     QStandardItemModel(nullptr)

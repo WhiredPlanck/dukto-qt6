@@ -1,7 +1,7 @@
 #include <QDateTime>
 #include <QLocale>
 #include "recentlistitemmodel.h"
-#include "utilities.h"
+#include "utils/utilities.h"
 
 RecentListItemModel::RecentListItemModel() :
     QStandardItemModel(nullptr)

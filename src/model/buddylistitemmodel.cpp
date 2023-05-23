@@ -5,9 +5,9 @@
 #include <QDir>
 
 #include "buddylistitemmodel.h"
-#include "os.h"
-#include "peer.h"
-#include "utilities.h"
+#include "utils/os.h"
+#include "utils/peer.h"
+#include "utils/utilities.h"
 
 BuddyListItemModel::BuddyListItemModel() :
     QStandardItemModel(nullptr)
