@@ -32,7 +32,7 @@ Rectangle {
         width: parent.width
         height: parent.height
         x: -parent.width
-        opacity: 0
+        opacity: 1
         onBackHome: parent.state = "none"
     }
 

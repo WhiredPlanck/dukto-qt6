@@ -10,17 +10,10 @@ Item {
         height: 64
         color: themeManager.colorPrimary
 
-        LinearGradient {
-            anchors.fill: parent;
-            start: Qt.point(0, height)
-            end: Qt.point(width, 0)
-            opacity: 0.3
-            gradient: Gradient {
-                GradientStop { position: 0.0; color: parent.color }
-                GradientStop { position: 0.618; color: "white" }
-                GradientStop { position: 1.0; color: parent.color }
-            }
+        TileGradient {
+            anchors.fill: parent
         }
+
         // Image {
         //     source: "DuktoMetroIcon.png"
         //     anchors.fill: parent

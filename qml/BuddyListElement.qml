@@ -48,16 +48,8 @@ Flipable {
                anchors.fill: parent
                color: themeManager.colorPrimary
 
-               LinearGradient {
+               TileGradient {
                    anchors.fill: parent;
-                   start: Qt.point(0, height)
-                   end: Qt.point(width, 0)
-                   opacity: 0.3
-                   gradient: Gradient {
-                       GradientStop { position: 0.0; color: themeManager.colorPrimary }
-                       GradientStop { position: 0.618; color: "white" }
-                       GradientStop { position: 1.0; color: themeManager.colorPrimary }
-                   }
                }
 
                Image {
@@ -75,16 +67,8 @@ Flipable {
                anchors.fill: parent
                color: themeManager.colorPrimary
 
-               LinearGradient {
-                   anchors.fill: parent;
-                   start: Qt.point(0, height)
-                   end: Qt.point(width, 0)
-                   opacity: 0.3
-                   gradient: Gradient {
-                       GradientStop { position: 0.0; color: themeManager.colorPrimary }
-                       GradientStop { position: 0.618; color: "white" }
-                       GradientStop { position: 1.0; color: themeManager.colorPrimary }
-                   }
+               TileGradient {
+                   anchors.fill: parent
                }
 
                Image {

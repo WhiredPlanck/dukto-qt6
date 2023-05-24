@@ -36,5 +36,7 @@
         <file>qml/SettingsPage.qml</file>
         <file>qml/SBPicker.qml</file>
         <file>qml/icons/BackIconDark.png</file>
+        <file>qml/PanelGradient.qml</file>
+        <file>qml/TileGradient.qml</file>
     </qresource>
 </RCC>

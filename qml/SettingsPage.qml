@@ -63,18 +63,10 @@ Rectangle {
         color: themeManager.colorPrimary
         clip: true
 
-        LinearGradient {
-            width: 360
-            height: 214
+        PanelGradient {
             anchors.top: parent.top
             anchors.left: parent.left
             anchors.fill: parent
-            opacity: 0.3
-            gradient: Gradient {
-                GradientStop { position: 0.0; color: "#248b00" }
-                GradientStop { position: 0.5; color: "white" }
-                GradientStop { position: 1.0; color: "#248b00" }
-            }
         }
 
         Text {
