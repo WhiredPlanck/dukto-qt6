@@ -16,13 +16,20 @@ Rectangle {
         }
     }
 
+    // remember that we set the width of this overlay
+    // to 0 after the state change to "none", so we must
+    // set the horizontal ordinates (x) of these pages to
+    // a fix negative (i.e. the negative of the width of
+    // Dukto window). Otherwise these pages will still
+    // mask the main pages and block the mouse events.
+
     IPPage {
         id: ipPage
         anchors.top: parent.top
         anchors.topMargin: 10
         anchors.bottom: parent.bottom
         width: parent.width
-        x: -parent.width
+        x: -360
         opacity: 0
         onBackHome: parent.state = "none"
     }
@@ -31,7 +38,7 @@ Rectangle {
         id: settingsPage
         width: parent.width
         height: parent.height
-        x: -parent.width
+        x: -360
         opacity: 1
         onBackHome: parent.state = "none"
     }
@@ -41,7 +48,7 @@ Rectangle {
         anchors.top: parent.top
         anchors.bottom: parent.bottom
         width: parent.width
-        x: -parent.width
+        x: -360
         opacity: 0
         onAccepted: {
             appSettings.showTermsOnStart = false;
