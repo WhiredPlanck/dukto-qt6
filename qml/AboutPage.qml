@@ -14,10 +14,10 @@ Item {
             anchors.fill: parent
         }
 
-        // Image {
-        //     source: "DuktoMetroIcon.png"
-        //     anchors.fill: parent
-        // }
+         Image {
+             source: "icons/DuktoMetroIcon.png"
+             anchors.fill: parent
+         }
     }
 
     SmoothText {

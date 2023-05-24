@@ -38,5 +38,6 @@
         <file>qml/icons/BackIconDark.png</file>
         <file>qml/PanelGradient.qml</file>
         <file>qml/TileGradient.qml</file>
+        <file>qml/icons/DuktoMetroIcon.png</file>
     </qresource>
 </RCC>
