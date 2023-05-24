@@ -9,6 +9,8 @@ class AppSettings : public QObject
     Q_OBJECT
 
     Q_PROPERTY(bool showTermsOnStart READ showTermsOnStart WRITE setShowTermsOnStart NOTIFY showTermsOnStartChanged)
+    Q_PROPERTY(QString themeColorPrimary READ themeColorPrimary WRITE setThemeColorPrimary NOTIFY themeColorPrimaryChanged)
+    Q_PROPERTY(QString currentRecevieDirectory READ currentRecevieDirectory WRITE setCurrentRecevieDirectory NOTIFY currentRecevieDirectoryChanged)
 public:
     explicit AppSettings(QObject *parent = nullptr);
 
@@ -18,8 +20,13 @@ public:
     QString themeColorPrimary();
     void setThemeColorPrimary(QString colorPrimary);
 
+    QString currentRecevieDirectory();
+    void setCurrentRecevieDirectory(QString dir);
+
 signals:
     void showTermsOnStartChanged();
+    void themeColorPrimaryChanged();
+    void currentRecevieDirectoryChanged();
 
 private:
     QSettings settings_;

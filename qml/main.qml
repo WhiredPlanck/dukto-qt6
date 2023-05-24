@@ -21,6 +21,9 @@ Window {
             onShowIPList: {
                 duktoOverlay.state = "ip"
             }
+            onShowSettings: {
+                duktoOverlay.state = "settings"
+            }
         }
 
         DuktoOverlay {

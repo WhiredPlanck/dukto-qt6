@@ -1,6 +1,7 @@
 #include <QQmlContext>
 #include <QDesktopServices>
 #include <QDir>
+#include <QFileDialog>
 #include "enginerunner.h"
 
 
@@ -9,6 +10,12 @@ EngineRunner::EngineRunner(QGuiApplication *app, QQmlApplicationEngine *engine) 
 {
     buddyListItemModel_.addMeElement();
     buddyListItemModel_.addIPElement();
+
+    // change current folder
+    QDir::setCurrent(appSettings_.currentRecevieDirectory());
+
+    // set current theme color
+    themeManager_.setThemeColor(appSettings_.themeColorPrimary());
 
     // register C++ class for QML
     engine->rootContext()->setContextProperty("engineRunner", this);
@@ -34,6 +41,19 @@ EngineRunner::EngineRunner(QGuiApplication *app, QQmlApplicationEngine *engine) 
 
 void EngineRunner::openRecevieDirectory() {
     QDesktopServices::openUrl(QUrl::fromLocalFile(QDir::currentPath()));
+}
+
+void EngineRunner::changeRecevieDirectory() {
+
+    // Show system dialog for folder selection
+    QString dirname = QFileDialog::getExistingDirectory(nullptr, tr("Change folder"), ".",
+                                                        QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
+    if (dirname.isEmpty()) return;
+
+    // Set the new folder as current
+    QDir::setCurrent(dirname);
+
+    appSettings_.setCurrentRecevieDirectory(dirname);
 }
 
 QString EngineRunner::overlayState() {

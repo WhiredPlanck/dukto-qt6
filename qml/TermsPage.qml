@@ -36,7 +36,7 @@ Rectangle {
         anchors.topMargin: 5
         font.pixelSize: 64
         text: qsTr("Disclaimer")
-        color: ColorSingleto.colorAccent
+        color: themeManager.colorAccent
     }
 
     Text {

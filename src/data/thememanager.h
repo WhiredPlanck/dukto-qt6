@@ -14,7 +14,7 @@ public:
     explicit ThemeManager(QObject *parent = nullptr);
     inline QString colorPrimary() { return colorPrimary_; }
     inline QString colorAccent() { return colorAccent_; }
-    void setThemeColor(QString color);
+    Q_INVOKABLE void setThemeColor(QString color);
 
     static const QString DEFAULT_THEME_COLOR;
 

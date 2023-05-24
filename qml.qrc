@@ -29,5 +29,12 @@
         <file>qml/icons/BackIcon.png</file>
         <file>qml/ButtonDark.qml</file>
         <file>qml/TermsPage.qml</file>
+        <file>qml/ColorBox.qml</file>
+        <file>qml/ColorPicker.qml</file>
+        <file>qml/ColorSlider.qml</file>
+        <file>qml/ColorUtils.js</file>
+        <file>qml/SettingsPage.qml</file>
+        <file>qml/SBPicker.qml</file>
+        <file>qml/icons/BackIconDark.png</file>
     </qresource>
 </RCC>

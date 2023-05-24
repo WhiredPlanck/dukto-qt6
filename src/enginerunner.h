@@ -26,6 +26,7 @@ public:
 
     // called by QML
     Q_INVOKABLE void openRecevieDirectory();
+    Q_INVOKABLE void changeRecevieDirectory();
 
 signals:
     void overlayStateChanged();

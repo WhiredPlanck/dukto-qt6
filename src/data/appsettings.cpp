@@ -1,3 +1,5 @@
+#include <QDir>
+#include <QStandardPaths>
 #include "appsettings.h"
 
 AppSettings::AppSettings(QObject *parent)
@@ -23,4 +25,22 @@ QString AppSettings::themeColorPrimary() {
 void AppSettings::setThemeColorPrimary(QString colorPrimary) {
     settings_.setValue("themeColorPrimary", colorPrimary);
     settings_.sync();
+    emit themeColorPrimaryChanged();
+}
+
+QString AppSettings::currentRecevieDirectory() {
+    QString store = settings_.value("currentRecevieDirectory").toString();
+
+    if (!store.isEmpty() && QDir(store).exists()) return store;
+
+    QString defaultPath = // we return the download location for default path
+        QStandardPaths::writableLocation(QStandardPaths::DownloadLocation);
+
+    return QDir(defaultPath).exists() ? defaultPath : ".";
+}
+
+void AppSettings::setCurrentRecevieDirectory(QString dir) {
+    settings_.setValue("currentRecevieDirectory", dir);
+    settings_.sync();
+    emit currentRecevieDirectoryChanged();
 }

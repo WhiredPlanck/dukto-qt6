@@ -27,6 +27,15 @@ Rectangle {
         onBackHome: parent.state = "none"
     }
 
+    SettingsPage {
+        id: settingsPage
+        width: parent.width
+        height: parent.height
+        x: -parent.width
+        opacity: 0
+        onBackHome: parent.state = "none"
+    }
+
     TermsPage {
         id: termsPage
         anchors.top: parent.top
@@ -52,6 +61,15 @@ Rectangle {
                 target: disabler
                 opacity: 1
                 visible: true
+            }
+        },
+        State {
+            name: "settings"
+
+            PropertyChanges {
+                target: settingsPage
+                opacity: 1
+                x: 0
             }
         },
         State {
